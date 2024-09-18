@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrato Financeiro</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Barra lateral de navegação -->
+    <div class="sidebar">
+        <img src="logo-correta.png" alt="Logo" class="sidebar-logo">
+        <ul>
+            <li><a href="#">Dashboard Inicial</a></li>
+            <li><a href="#">Extrato</a></li>
+            <li><a href="#">Pagamentos e Recebíveis</a></li>
+            <li><a href="#">Relatórios</a></li>
+            <li><a href="#">Análises Financeiras</a></li>
+            <li><a href="#">Configurações</a></li>
+            <li><a href="#">Sair</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header class="header-bar">
+            <div class="header-info">
+                <h1>Casa da Vovó</h1>
+                <span id="data-hoje"></span>
+            </div>
+        </header>
+
+        <div class="saldo-container">
+            <h2>Saldo Atual:</h2>
+            <p id="saldo-atual" style="display: none;">R$ 1850,00</p> <!-- Inicialmente oculto -->
+            <a href="#" id="toggle-saldo" onclick="exibirOcultarSaldo()">Exibir Saldo</a>
+        </div>
+
+        <div class="container">
+            <!-- Barra de pesquisa e filtros -->
+            <div class="pesquisa-filtros-container">
+                <div class="pesquisa-container">
+                    <input type="text" id="pesquisa" placeholder="Buscar por código ou data da transação">
+                    <button onclick="buscarTransacao()">Buscar</button>
+                </div>
+        
+                <!-- Filtros de dias -->
+                <div class="filtros-container">
+                    <button id="filtro-7d" onclick="filtrarDias(7)">Últimos 7 dias</button>
+                    <button id="filtro-30d" onclick="filtrarDias(30)">Últimos 30 dias</button>
+                    <button id="filtro-60d" onclick="filtrarDias(60)">Últimos 60 dias</button>
+                </div>
+            </div>
+
+            <!-- Tabela de transações -->
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Código</th>
+                            <th>Descrição</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-transacoes">
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>    
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+/* Estilo geral da aplicação */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0; 
+}
+
+/* Barra lateral */
+.sidebar {
+    height: 100vh;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #e63946;  
+    padding-top: 20px;
+    z-index: 1000; /* Mantém a barra acima do restante */
+    overflow: auto; /* Permite rolar se o conteúdo for maior que a altura */
+    text-align: center; /* Centraliza o conteúdo dentro da barra lateral */
+}
+
+.sidebar-logo {
+    width: 80%; /* Ajusta a largura da imagem para 80% da largura da barra lateral */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Garante que a imagem fique em bloco */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    margin-bottom: 20px; /* Adiciona espaçamento abaixo da imagem */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 0; /* Remove margem padrão dos itens */
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    font-size: 16px;
+    border-bottom: 1px solid #d62828; /* Adiciona separação entre os itens */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background-color: #d62828;  
+    border-color: #d62828; 
+}
+
+/* Ajuste do conteúdo principal */
+.main-content {
+    margin-left: 200px;  /* Espaço para a barra lateral */
+    padding: 20px;
+}
+
+/* Ajuste do header */
+header {
+    background-color: #e63946;  
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative; /* Necessário para posicionar a data corretamente */
+    margin-bottom: 20px;
+}
+
+/* Informações do header */
+.header-info {
+    display: flex;
+    justify-content: center; /* Centraliza o título */
+    align-items: center;
+    position: relative;
+}
+
+.header-info h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Data e hora no canto direito */
+#data-hoje {
+    font-size: 14px;
+    position: absolute;
+    right: 10px; /* Alinha a data ao lado direito */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Estilo para o container de saldo */
+.saldo-container {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background-color: #f8d7da;
+    padding: 15px;
+    border-radius: 5px;
+    width: 250px;
+    color: #e63946;
+    font-weight: bold;
+}
+
+.saldo-container h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.saldo-container p {
+    font-size: 24px;
+    margin: 5px 0 0 0;
+}
+
+/* Estilo para o link de exibir/ocultar saldo */
+#toggle-saldo {
+    color: #6c757d; /* Cor cinza */
+    text-decoration: none; /* Remove o sublinhado */
+    cursor: pointer;
+}
+
+#toggle-saldo:hover {
+    color: #5a6268; /* Cor um pouco mais escura ao passar o mouse */
+}
+
+/* Container para a barra de pesquisa e os filtros */
+.pesquisa-filtros-container {
+    display: flex;
+    justify-content: space-between; /* Distribui o espaço entre a barra de pesquisa e os filtros */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    margin-bottom: 20px; /* Espaçamento abaixo do contêiner */
+}
+
+/* Ajustes na barra de pesquisa */
+.pesquisa-container {
+    display: flex; /* Mantém o input e o botão lado a lado */
+    align-items: center; /* Alinha o botão e o input no centro verticalmente */
+}
+
+.pesquisa-container input {
+    flex: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #e63946;
+    border-radius: 5px;
+    width: 600px;
+    max-width: 700px;
+}
+
+.pesquisa-container button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #e63946;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Filtros */
+.filtros-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.filtros-container button {
+    background-color: #fff;
+    color: #e63946;
+    padding: 8px 15px;
+    border: 1px solid #e63946;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Adiciona uma transição suave */
+}
+
+
+.filtros-container button:hover {
+    background-color: #f0f0f0;
+    color: white; /* Cor diferente ao passar o mouse */
+}
+
+/* Estilo para o botão ativo (selecionado) */
+.filtros-container .ativo {
+    background-color: #e63946;
+    color: white;
+    border-color: #e63946;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table thead {
+    background-color: #f94144; 
+    color: white;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilo para os valores das transações */
+table td.valor {
+    font-weight: bold;
+}
+
+/* Valor positivo (entrada) em verde */
+table td.valor.entrada {
+    color: #28a745;
+}
+
+/* Valor negativo (saída) em vermelho */
+table td.valor.saida {
+    color: #dc3545;
+}
+
+
+
+
+
